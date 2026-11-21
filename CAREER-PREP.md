@@ -85,8 +85,8 @@ Check: zero errors, and the toggle updates two separate components.
 - **Feedback & Score:**
 -   **Score**: *6/10*. Your answer correctly identifies the core distinction—props are passed in and state changes within a component—but it is          too brief and contains a technical imprecision about props being “cannot be changed.”
 -   **Two weakest points**
-      “Props cannot be changed” is incomplete. Props are read-only within the child component; a parent can re-render the child with different         prop values. Saying they “cannot be changed” without that context can sound inaccurate. React treats props and state as immutable               snapshots and expects you to pass new props rather than mutate them.
-       State is not only for clicks. State can track any changing UI data—form input, loading status, API results, selected tabs, or modal             visibility. Your answer narrows it to “when the user clicks something,” which understates its use. React recommends state for data              expected to change over time, including user interaction.
+      1. “Props cannot be changed” is incomplete. Props are read-only within the child component; a parent can re-render the child with                  different prop values. Saying they “cannot be changed” without that context can sound inaccurate. React treats props and state as               immutable snapshots and expects you to pass new props rather than mutate them.
+       2. State is not only for clicks. State can track any changing UI data—form input, loading status, API results, selected tabs, or modal             visibility. Your answer narrows it to “when the user clicks something,” which understates its use. React recommends state for data              expected to change over time, including user interaction.
 ---
 
 ## 6. Peer Review Observation
