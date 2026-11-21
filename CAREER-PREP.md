@@ -29,7 +29,52 @@
 ---
 
 ## 4. 7-Day Study Plan (TypeScript for React)
-*(Yahan Claude se mila hua apna Day 1 se Day 7 wala plan paste kar dein)*
+- **Day 1: TypeScript basics (outside React)**
+
+Learn: primitive types, arrays, type vs interface, union types ("a" | "b"), optional properties (?), function parameter and return types.
+Task: In day1.ts, define type Student = { id: number; name: string; year?: 1 | 2 | 3 | 4 }. Write getLabel(s: Student): string and average(nums: number[]): number. Add 3 sample students in an array.
+Check: npx tsc --noEmit passes. Deliberately pass a wrong type, confirm you get an error, then fix it.
+
+- **Day 2: Typing props**
+
+Learn: typing component props, optional props, default values, children: React.ReactNode, union props for variants.
+Task: Build <Button label variant="primary" | "danger" onClick? /> and <Card title>{children}</Card>. Render 3 buttons and 2 cards in App.tsx.
+Check: zero errors, and variant="blue" gives a compile error.
+
+- **Day 3: Typing state with useState**
+
+Learn: inferred vs explicit state types, useState<string | null>(null), arrays and object state, immutable updates.
+Task: Build a Todo list: type Todo = { id: number; text: string; done: boolean }. Support add, toggle, and delete.
+Check: zero errors, and all three actions work in the browser.
+
+- **Day 4: Typing events and forms**
+
+Learn: React.ChangeEvent<HTMLInputElement>, React.FormEvent<HTMLFormElement>, React.MouseEvent, controlled inputs, useRef<HTMLInputElement>(null).
+Task: Build a signup form (name, email, year dropdown) with a typed form-state object, a single handleChange for all fields, and validation messages.
+Check: zero errors. Submitting logs a correctly typed object.
+
+- **Day 5: Typing API data with useEffect**
+
+Learn: typing fetch responses, loading/error/data states, useEffect cleanup, generics (Promise<User[]>), unknown vs any.
+Task: Fetch https://jsonplaceholder.typicode.com/users, define a User type, and render a list with loading and error states plus a search box that filters it.
+Check: zero errors, and the list, loading state, and error state (test by breaking the URL) all work.
+
+- **Day 6: Custom hooks, Context, and useReducer**
+
+Learn: typing a custom hook's return value, createContext<T | null>(null), typed reducer actions as a discriminated union.
+Task: Build a useCounter hook, then a ThemeContext (light/dark) with a typed provider and a useTheme() hook that throws if used outside the provider.
+Check: zero errors, and the toggle updates two separate components.
+
+- **Day 7: Test day (90 minutes, no AI, no copy-paste from old code)**
+
+Build a "Task Tracker" mini-app from a blank folder:
+
+A Task type: id, title, priority: "low" | "medium" | "high", done
+A typed TaskForm component with props (onAdd) and a form with typed events
+A TaskList component with typed props, toggle and delete
+A filter by priority, using typed state
+Load 5 starter tasks from https://jsonplaceholder.typicode.com/todos?_limit=5, mapped into your Task type
+State shared via Context or lifted state*
 
 ---
 
