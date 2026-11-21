@@ -67,22 +67,27 @@ Check: zero errors, and the toggle updates two separate components.
 
 - **Day 7: Test day (90 minutes, no AI, no copy-paste from old code)**
 
-Build a "Task Tracker" mini-app from a blank folder:
+---  Build a "Task Tracker" mini-app from a blank folder:
 
-A Task type: id, title, priority: "low" | "medium" | "high", done
-A typed TaskForm component with props (onAdd) and a form with typed events
-A TaskList component with typed props, toggle and delete
-A filter by priority, using typed state
-Load 5 starter tasks from https://jsonplaceholder.typicode.com/todos?_limit=5, mapped into your Task type
-State shared via Context or lifted state*
+------ A Task type: id, title, priority: "low" | "medium" | "high", done
+------ A typed TaskForm component with props (onAdd) and a form with typed events
+------ A TaskList component with typed props, toggle and delete
+------ A filter by priority, using typed state
+        Load 5 starter tasks from https://jsonplaceholder.typicode.com/todos?_limit=5, mapped into your Task type
+        State shared via Context or lifted state*
 
 ---
 
 ## 5. Mock Technical Interview & Feedback
 - **Question:** What are props and state in React, and when would you use each?[cite: 24]
-- **My Answer:** Props are used to send data from one component to another and cannot be changed, while state is used to store data inside a component that changes when the user clicks something.
-- **Feedback & Score:** *(Yahan Perplexity se mila hua Score aur 2 Weak Points paste kar dein)*
+- **My Answer:** Props are used to send data from one component to another and cannot be changed, while state is used to store data inside a                     component that changes when the user clicks something.
+- 
+- **Feedback & Score:**
+-   **Score**: *6/10*. Your answer correctly identifies the core distinction—props are passed in and state changes within a component—but it is          too brief and contains a technical imprecision about props being “cannot be changed.”
+-   **Two weakest points**
+      “Props cannot be changed” is incomplete. Props are read-only within the child component; a parent can re-render the child with different         prop values. Saying they “cannot be changed” without that context can sound inaccurate. React treats props and state as immutable               snapshots and expects you to pass new props rather than mutate them.
 
+State is not only for clicks. State can track any changing UI data—form input, loading status, API results, selected tabs, or modal visibility. Your answer narrows it to “when the user clicks something,” which understates its use. React recommends state for data expected to change over time, including user interaction.
 ---
 
 ## 6. Peer Review Observation
